@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPF_Brickstore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Brickstore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dg_LegoItems" Grid.Column="1" Grid.RowSpan="2" 
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False"
+                  IsReadOnly="True"
+                  >
+            
+        </DataGrid>
+        <StackPanel>
+            <Button Content="Load BSX file" Click="LoadBSX" Margin="0 0 0 15"/>
+            <Label Content="Sort by Category Name:"/>
+            <TextBox TextChanged="SortTable" Tag="CategoryName"/>
+            <Label Content="Sort by Item Name:" />
+            <TextBox TextChanged="SortTable" Tag="ItemName"/>
+            <Label Content="Sort by ID:"/>
+            <TextBox TextChanged="SortTable" Tag="ItemID"/>
+        </StackPanel>
+    </Grid>
+</Window>
